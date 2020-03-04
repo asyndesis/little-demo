@@ -1,0 +1,104 @@
+/* General */
+html,
+body {
+  background: #eee;
+}
+
+/* Components */
+/* TextBox */
+.label {
+  opacity: 0.5;
+  font-size: 10px;
+  display: block;
+  margin: 0px auto 2px auto;
+  width: 200px;
+  text-align: center;
+}
+.input-text {
+  margin: 0px auto;
+  border: none;
+  border: 1px solid #ccc;
+  padding: 6px;
+  border-radius: 3px;
+  outline: none;
+  display: block;
+  width: 200px;
+}
+/* Clamp */
+.clamp {
+  margin: 20px auto; // demo purposes
+  min-width: 100px;
+  display: block;
+}
+/* UserStatus */
+$padding-outer: 12px;
+.user-status-wrap {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  height: 52px;
+  min-width: 100px;
+}
+.user-status-media {
+  padding: 0px $padding-outer;
+  position: relative;
+  overflow: hidden;
+  .user-status-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+  }
+  .user-status-icon {
+    position: absolute;
+    bottom: 2px; //to offset border
+    right: 10px;
+    border-radius: 100%;
+    width: 8px;
+    height: 8px;
+    border: 2px solid #fff;
+    background: #ccc;
+    &.offline {
+      background: #aa0000;
+    }
+    &.online {
+      background: #00aa00;
+    }
+  }
+  &.small {
+    //status colors
+    .user-status-avatar {
+      display: none;
+    }
+    .user-status-icon {
+      position: static;
+    }
+  }
+}
+.user-status-body {
+  padding-right: $padding-outer;
+  color: #222;
+  flex-basis: 0;
+  flex-grow: 1;
+  min-width: 0; //needs this for truncate ... to work
+  h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1;
+    padding: 0 0 2px 0;
+    margin: 0;
+    font-size: 10px;
+  }
+  p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+    font-size: 10px;
+  }
+}
